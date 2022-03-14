@@ -32,3 +32,44 @@ def nearby_location(user:)
 end
 
 #Worth mentioning that it's intuitive to have the home_location and work_location helper methods
+
+
+
+
+
+
+
+# Some questions to keep in here
+class CommentsController < ApplicationController
+  def users_comments
+    posts = Post.all
+    comments = posts.map(&:comments).flatten
+    @user_comments = comments.select do |comment|
+      comment.author.username == params[:username]
+    end
+  end
+end
+
+posts = Post.includes(comments: [:author]).all
+
+
+y = x[0].merge(x[1]).merge(x[2])
+
+y.keys                   # will return all keys
+y.values                 # will return all values
+y.values.inject(:+)      # will return the sum of all values
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
